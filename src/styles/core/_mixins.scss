@@ -1,0 +1,32 @@
+@use "variables" as *;
+
+@mixin placeholder {
+  &::placeholder {
+    @content;
+  }
+
+  &:input-placeholder {
+    @content;
+  }
+
+  &:placeholder {
+    @content;
+  }
+
+  :input-placeholder {
+    @content;
+  }
+}
+
+@mixin ng-deep {
+  ::ng-deep {
+    @content;
+  }
+}
+
+@mixin font-details($font-style, $font-weight, $font-size, $line-height) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}

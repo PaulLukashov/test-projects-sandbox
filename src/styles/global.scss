@@ -1,0 +1,206 @@
+@use "core" as *;
+
+*:focus {
+  outline: 0.3rem solid #000;
+}
+
+*.js-focus-visible :focus:not(.focus-visible) {
+  outline: 0;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: 62.5%;
+  line-height: 1;
+  scroll-behavior: smooth;
+  -webkit-marquee-increment: calc(
+    0vh
+  ); // https://www.sarasoueidan.com/blog/safari-fluid-typography-bug-fix/
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: $font-family-primary;
+  font-size: $font-size;
+  color: $color-dark-blue;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  // background-color: $body-bg; // Instead this use <app-root>: https://www.tempertemper.net/blog/scroll-bounce-page-background-colour
+
+  // Better cross browser font smoothing
+  text-rendering: optimizeLegibility;
+  font-variant-ligatures: none;
+  text-decoration-skip: objects;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+small {
+  font-size: 80%;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+dl,
+dd,
+figure,
+blockquote {
+  margin: 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+iframe,
+img,
+input,
+select,
+textarea {
+  max-width: 100%;
+  height: auto;
+}
+
+audio,
+video {
+  display: block;
+}
+
+iframe {
+  border: 0;
+}
+
+dialog {
+  width: auto;
+  padding: 0;
+  overflow-y: auto;
+  background-color: transparent;
+  border: 0;
+}
+
+fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0.01em 0 0;
+  border: 0;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+input[placeholder] {
+  text-overflow: ellipsis;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button,
+select {
+  text-align: left;
+  text-transform: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:not([href]) {
+    cursor: default;
+  }
+}
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+[hidden] {
+  display: none;
+}
+
+:disabled,
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.container {
+  max-width: 127rem;
+  margin: 0 auto;
+}
+
+.unselectable {
+  user-select: none;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16.9rem;
+  height: 3.8rem;
+  text-align: center;
+  padding: 0 2.4rem;
+  font-size: $font-size-s;
+  color: $color-white;
+  background-color: $color-blue;
+  transition: background-color 250ms ease-in-out;
+
+  &:hover {
+    background-color: #41a2f2;
+  }
+}

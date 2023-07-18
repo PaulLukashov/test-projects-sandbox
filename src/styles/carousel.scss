@@ -1,0 +1,55 @@
+@use "core" as *;
+
+@import "node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.carousel.scss";
+@import "node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.theme.default.scss";
+
+.owl-theme .owl-nav [class*="owl-"] {
+  position: absolute;
+  width: 4.8rem;
+  height: 4.8rem;
+  background: none;
+  background-image: url("/assets/img/arrow-right-solid.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 2.4rem;
+  background-color: rgba($color: $color-black, $alpha: 0.5);
+  border-radius: 100%;
+
+  &:hover {
+    background-color: rgba($color: $color-black, $alpha: 0.7);
+    background-image: url("/assets/img/arrow-right-solid.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 2.4rem;
+  }
+}
+
+.owl-item .slide {
+  margin-right: 1rem;
+}
+
+.owl-prev {
+  top: calc(50% - 2.4rem);
+  left: 0;
+  transform: rotate(180deg);
+  z-index: 99999 !important;
+
+  @include to(s) {
+    left: -2.5rem;
+  }
+}
+
+.owl-next {
+  top: calc(50% - 2.4rem);
+  right: 0;
+  z-index: 99999 !important;
+
+  @include to(s) {
+    right: -2.5rem;
+  }
+}
+
+iframe.instagram-media.instagram-media-rendered {
+  height: 700px !important;
+  overflow-y: auto !important;
+}
