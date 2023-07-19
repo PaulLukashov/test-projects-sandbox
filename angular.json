@@ -83,10 +83,12 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "test-project-sandbox:build:production"
+              "browserTarget": "test-project-sandbox:build:production",
+              "proxyConfig": "./proxy.conf.json"
             },
             "development": {
-              "browserTarget": "test-project-sandbox:build:development"
+              "browserTarget": "test-project-sandbox:build:development",
+              "proxyConfig": "./proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
