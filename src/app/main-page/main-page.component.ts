@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InstagramDOMService } from 'Core/services/instagram-dom.service';
 
 @Component({
   selector: 'app-main-page',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private instagramService: InstagramDOMService) { }
 
   ngOnInit() {
   }
 
+  sendAuthRequest() {
+    this.instagramService.sendAuthRequest().subscribe(res => {
+      console.log(res);
+    })
+  }
 }
