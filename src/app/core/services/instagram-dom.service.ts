@@ -19,7 +19,7 @@ export class InstagramDOMService {
 
   public sendAuthRequest() {
     const params = {
-      client_id: '298562645920307',
+      client_id: '118835761272903',
       redirect_uri: 'https://test-projects-sandbox.vercel.app/',
       scope: 'user_profile,user_media',
       response_type: 'code',
