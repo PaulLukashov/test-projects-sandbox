@@ -24,6 +24,6 @@ export class InstagramDOMService {
       scope: 'user_profile,user_media',
       response_type: 'code',
     }
-    return this.http.post('https://api.instagram.com/oauth/authorize', {}, {params});
+    return this.http.post('https://api.instagram.com/oauth/authorize', {}, {params, headers: {'Content-Type': 'application/x-www-form-urlencoded'}});
   }
 }
